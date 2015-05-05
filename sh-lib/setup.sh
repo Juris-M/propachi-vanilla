@@ -1,6 +1,7 @@
 VERSION=""
 PATCH=$(cat version/patch.txt)
 BETA=$(cat version/beta.txt)
+DOORKEY=$(cat "${HOME}/bin/doorkey.txt")
 
 SCRIPT_DIR=$(pwd)
 

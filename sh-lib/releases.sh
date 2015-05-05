@@ -9,7 +9,7 @@ function create-github-release () {
         RELEASE_BODY="To install the plugin, click on the &ldquo;${CLIENT}-v${VERSION_STUB}.xpi&rdquo; file below while viewing this page in Firefox. This release will update automatically."
     fi
     UPLOAD_URL=$(curl --fail --silent \
-        --user "$DOORKEY" \
+        --user "${DOORKEY}" \
         "https://api.github.com/repos/Juris-M/${FORK}/releases/tags/${RELEASE_TAG}" \
         | ~/bin/jq '.upload_url')
     if [ "$UPLOAD_URL" == "" ]; then
@@ -38,7 +38,7 @@ function add-xpi-to-github-release () {
 
 function publish-update () {
     # Generate a signed update manifest
-    uhura -o update-TRANSFER.rdf -k ~/juris-m-distrib-keys/keyfile.pem -p @~/bin/doorkey-jaggies.txt "${RELEASE_DIR}/${CLIENT}-v${VERSION}.xpi" "https://github.com/Juris-M/${FORK}/releases/download/v${VERSION_STUB}/${CLIENT}-v${VERSION}.xpi"
+    uhura -o update-TRANSFER.rdf -k ~/juris-m-distrib-keys/keyfile.pem -p "@${HOME}/bin/doorkey-jaggies.txt" "${RELEASE_DIR}/${CLIENT}-v${VERSION}.xpi" "https://github.com/Juris-M/${FORK}/releases/download/v${VERSION_STUB}/${CLIENT}-v${VERSION}.xpi"
     # Slip the update manifest over to the gh-pages branch, commit, and push
     git checkout gh-pages >> "${LOG_FILE}" 2<&1
     if [ ! -f update.rdf ]; then
