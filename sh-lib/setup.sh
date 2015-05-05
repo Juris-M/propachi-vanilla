@@ -1,11 +1,6 @@
+VERSION=""
 PATCH=$(cat version/patch.txt)
 BETA=$(cat version/beta.txt)
-IS_BETA=0
-VERSION=""
-FORK="propachi"
-BRANCH="vanilla"
-CLIENT="propachi-vanilla"
-VERSION_ROOT="4.0.27m"
 
 SCRIPT_DIR=$(pwd)
 

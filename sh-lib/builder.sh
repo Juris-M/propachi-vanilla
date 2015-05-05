@@ -6,12 +6,13 @@ function xx-fetch-latest-processor () {
     cd "${SCRIPT_DIR}"
     cd ../citeproc-js
     ./test.py -Z
-    mv citeproc_zotero "${SCRIPT_DIR}/chrome/content/citeproc.js"
+    mv citeproc_zotero.js "${SCRIPT_DIR}/chrome/content/citeproc.js"
     cd "${SCRIPT_DIR}"
 }
 
 function xx-read-version-from-processor-code () {
     PROCESSOR_VERSION=$(cat "chrome/content/citeproc.js" | grep "PROCESSOR_VERSION:" | sed -e "s/.*PROCESSOR_VERSION:[^0-9]*\([.0-9]\+\).*/\1/")
+}
 
 function xx-make-the-bundle () {
     find . -name '.hg' -prune -o \
@@ -27,12 +28,14 @@ function xx-make-the-bundle () {
         -name 'releases' -prune -o \
         -name 'sh-lib' -prune -o \
         -name 'build.sh' -prune -o \
-        -print | xargs zip "${XPI_FILE}" >> "${LOG_FILE}"
+        -print \
+        | xargs zip "${XPI_FILE}" >> "${LOG_FILE}"
 }
 
 function build-the-plugin () {
-    set-install-version
-    xx-fetch-latest-processor
-    xx-read-version-from-processor-code
-    xx-make-the-bundle
-}
+        set-install-version
+        xx-fetch-latest-processor
+        xx-read-version-from-processor-code
+        xx-make-the-bundle
+    }
+    

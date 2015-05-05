@@ -23,7 +23,7 @@ function ifZotero(succeed, fail) {
 function replaceProcessor (Zotero) {
     oldProcessor = Zotero.CiteProc.CSL;
     Cu.import("resource://gre/modules/Services.jsm");
-    Services.scriptloader.loadSubScript("chrome://propachi/content/citeproc.js", {}, "UTF-8");
+    Services.scriptloader.loadSubScript("chrome://propachi/content/citeproc.js", this, "UTF-8");
     Zotero.CiteProc.CSL = CSL;
 }
 

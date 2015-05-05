@@ -10,6 +10,7 @@
     <em:description>Replaces Zotero CSL processor with an alternative version.</em:description>
     <em:updateURL>https://juris-m.github.io/propachi-vanilla</em:updateURL>
     <em:unpack>true</em:unpack>
+    <em:bootstrap>true</em:bootstrap>
     <em:updateKey>
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsknZz0mHwhMpappMJe85
 3WeKMu+EjNfYAnBIcw/gTmzuOqnrfQcW3kJtkk/zX5GgXpbXjbv27C60cu2ORd/g
