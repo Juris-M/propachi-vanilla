@@ -49,4 +49,5 @@ function publish-update () {
     git commit -m "Refresh update.rdf" update.rdf >> "${LOG_FILE}" 2<&1
     git push origin gh-pages >> "${LOG_FILE}" 2<&1
     echo "Refreshed update.rdf on project site"
+    git checkout "${BRANCH}" >> "${LOG_FILE}" 2<&1
 }

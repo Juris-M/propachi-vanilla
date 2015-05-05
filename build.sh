@@ -10,7 +10,7 @@ IS_BETA=0
 FORK="propachi-vanilla"
 BRANCH="master"
 CLIENT="propachi-vanilla"
-VERSION_ROOT="4.0.27m"
+VERSION_ROOT="1.1."
 
 # Error handlers
 . sh-lib/errors.sh
