@@ -1,5 +1,6 @@
 function set-install-version () {
     sed -si "s/<em:version>.*<\/em:version>/<em:version>${VERSION}<\/em:version>/" install.rdf
+    sed -si "s/<em:updateURL>.*<\/em:version>/<em:version>https:\/\/juris-m.github.io\/${CLIENT}\/update.rdf<\/em:updateURL>/" install.rdf
 }
 
 function xx-fetch-latest-processor () {
