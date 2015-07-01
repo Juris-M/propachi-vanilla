@@ -4,22 +4,14 @@
     <em:id>propachi-vanilla@juris-m.github.io</em:id>
     <em:type>2</em:type>
     <em:name>Propachi: monkey-patch for Zotero CSL processor (standard version)</em:name>
-    <em:version>1.1.6beta2</em:version>
+    <em:version>1.1.15</em:version>
     <em:creator>Frank Bennett</em:creator>
     <em:contributor></em:contributor>
     <em:description>Replaces Zotero CSL processor with an alternative version.</em:description>
     <em:updateURL>https://juris-m.github.io/propachi-vanilla/update.rdf</em:updateURL>
     <em:unpack>true</em:unpack>
     <em:bootstrap>true</em:bootstrap>
-    <em:updateKey>
-MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsknZz0mHwhMpappMJe85
-3WeKMu+EjNfYAnBIcw/gTmzuOqnrfQcW3kJtkk/zX5GgXpbXjbv27C60cu2ORd/g
-8TJ1UANhAgJmbObGwr2Gml9KTIxOWmmEAPaCxGR89LgzmUQY2jJ0LQbzXm28OWnf
-gm3JjXhmKfNrBwXLpK1rCHiVJLlABkk3MykCVzB+3K0opGAbKhzAEYI1t8O43d+g
-WOSiHHF0CKKBYZ6o00iybJiSoPK36+kgY5ZnpsSoCdCtr0FMbA7uQnRDSUPmswE0
-WsMNdJu3z+d/j5roL8wDCcQw3eHsgbDj25WATPWtQmyMISdIrbG5uVEmtg+iWn/3
-jwIDAQAB
-    </em:updateKey>
+    <em:updateKey>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDJqWvOZqiHGp8hLJI92KIp6t1pKP2Q2t+5glUh7JSl+2pdt8y9ANHT1Bx3YrKDi1xwXJ7FNi4mss5XFqEmuJf2TDn02+V6D0hFsNEsSlkCcsznwnCYzeU8GKAhlgjeXz7YPQswLLSk61af/hIhdYUEyYQbxmIAOHDHgMeRcuYJ+QIDAQAB</em:updateKey>
     <em:targetApplication>
 	  <Description>
         <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id> <!-- Firefox -->

@@ -38,7 +38,18 @@ function add-xpi-to-github-release () {
 
 function publish-update () {
     # Generate a signed update manifest
-    uhura -o update-TRANSFER.rdf -k ~/juris-m-distrib-keys/keyfile.pem -p "@${HOME}/bin/doorkey-jaggies.txt" "${RELEASE_DIR}/${CLIENT}-v${VERSION}.xpi" "https://github.com/Juris-M/${FORK}/releases/download/v${VERSION_STUB}/${CLIENT}-v${VERSION}.xpi"
+    cp update-TEMPLATE.rdf update-TRANSFER.rdf
+    sed -si "s/\(<em:version>\).*\(<\/em:version>\)/\\1${VERSION_STUB}\\2/" update-TRANSFER.rdf
+    sed -si "s/\(<em:updateLink>.*download\/\).*\(<\/em:updateLink>\)/\\1v${VERSION_STUB}\/${CLIENT}-v${VERSION_STUB}.xpi\\2/" update-TRANSFER.rdf
+    ~/src/mccoy/mccoy
+    echo -n "Proceed? (y/n): "
+    read CHOICE
+    if [ "${CHOICE}" == "y" ]; then
+        echo Okay, here goes ...
+    else
+        echo Aborting
+        exit 1
+    fi
     # Slip the update manifest over to the gh-pages branch, commit, and push
     git checkout gh-pages >> "${LOG_FILE}" 2<&1
     if [ ! -f update.rdf ]; then
