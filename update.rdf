@@ -3,19 +3,19 @@
          xmlns:NC="http://home.netscape.com/NC-rdf#"
          xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
   <RDF:Description RDF:about="urn:mozilla:extension:propachi-vanilla@juris-m.github.io"
-                   em:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAKkDRvEmbft6e0nmeDuut3sWN6zkyfGJQLBibpKef6d+xo4vM4TeCjk2EU8Y5EmPiLhWqmJFjRMnzvX435r1/f282V42iJrpRT4xp8yvhTlCfWdLMnQZ05oAIJshzDJla0/kUOshUYi9D8/PseK0zzbjlh9GlGvRQrRCSopqFxgx">
-    <em:updates RDF:resource="rdf:#$gErVB1"/>
+                   em:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAIIM/C3bLCrqjY/RPweEVaplF0vRoTGNU8Nue+hlj+WgsCyW5u4Njtqdy66JP81Jk6StaQOv5qSBUWxd+zQznFXyDnWLa+Jx5JXQDfKi3i5PJ58lqctce2cJgR/1QA2u4umqfeAfW+5QfiNYVmwnQhNsKD9ubreciSPWLKc6TV8F">
+    <em:updates RDF:resource="rdf:#$BU4jZ2"/>
   </RDF:Description>
-  <RDF:Description RDF:about="rdf:#$kErVB1"
+  <RDF:Description RDF:about="rdf:#$FU4jZ2"
                    em:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
                    em:minVersion="3.6"
                    em:maxVersion="39.*"
-                   em:updateLink="https://github.com/Juris-M/propachi-vanilla/releases/download/v1.1.8/propachi-vanilla-v1.1.8.xpi" />
-  <RDF:Description RDF:about="rdf:#$hErVB1"
-                   em:version="1.1.8">
-    <em:targetApplication RDF:resource="rdf:#$kErVB1"/>
+                   em:updateLink="https://github.com/Juris-M/propachi-vanilla/releases/download/v1.1.9/propachi-vanilla-v1.1.9.xpi" />
+  <RDF:Description RDF:about="rdf:#$CU4jZ2"
+                   em:version="1.1.9">
+    <em:targetApplication RDF:resource="rdf:#$FU4jZ2"/>
   </RDF:Description>
-  <RDF:Seq RDF:about="rdf:#$gErVB1">
-    <RDF:li RDF:resource="rdf:#$hErVB1"/>
+  <RDF:Seq RDF:about="rdf:#$BU4jZ2">
+    <RDF:li RDF:resource="rdf:#$CU4jZ2"/>
   </RDF:Seq>
 </RDF:RDF>
