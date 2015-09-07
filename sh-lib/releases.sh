@@ -8,13 +8,16 @@ function create-github-release () {
         RELEASE_NAME="v${VERSION_STUB} final"
         RELEASE_BODY="To install the plugin, click on the ${CLIENT}-v${VERSION_STUB}.xpi file below while viewing this page in Firefox. This release will update automatically."
     fi
+    echo "one"
     UPLOAD_URL=$(curl --fail --silent \
         --user "${DOORKEY}" \
         "https://api.github.com/repos/Juris-M/${FORK}/releases/tags/${RELEASE_TAG}" \
         ~/bin/jq ".upload_url")
     if [ "$UPLOAD_URL" == "" ]; then
+        echo "two"
         # Create the release
         DAT=$(printf '{"tag_name": "%s", "name": "%s", "body":"%s", "draft": false, "prerelease": %s}' "$RELEASE_TAG" "$RELEASE_NAME" "$RELEASE_BODY" "$IS_BETA")
+        echo "three"
         UPLOAD_URL=$(curl --fail --silent \
             --user "${DOORKEY}" \
             --data "${DAT}" \
