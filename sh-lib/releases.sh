@@ -15,11 +15,12 @@ function create-github-release () {
     if [ "$UPLOAD_URL" == "" ]; then
         # Create the release
         DAT=$(printf '{"tag_name": "%s", "name": "%s", "body":"%s", "draft": false, "prerelease": %d}' "$RELEASE_TAG" "$RELEASE_NAME" "$RELEASE_BODY" "$IS_BETA")
-        UPLOAD_URL=$(curl --fail --silent \
+        
+        echo curl --fail --silent \
             --user "${DOORKEY}" \
             --data "${DAT}" \
             "https://api.github.com/repos/Juris-M/${FORK}/releases" \
-            )
+            
         echo "${UPLOAD_URL}"
         if [ "" == "$UPLOAD_URL" ]; then
             echo "OUCH! Upload of release failed."
