@@ -25,6 +25,8 @@ function create-github-release () {
     if [ "${UPLOAD_URL}" == "" ]; then
         echo $(curl --fail --silent --user "${DOORKEY}" --data "${DAT}" "https://api.github.com/repos/Juris-M/${FORK}/releases")
         exit 1
+    else
+        echo "Done?"
     fi
 }
 
