@@ -6,7 +6,7 @@ function create-github-release () {
     else
         RELEASE_TAG="v${VERSION_STUB}"
         RELEASE_NAME="v${VERSION_STUB} final"
-        RELEASE_BODY="To install the plugin, click on the &ldquo;${CLIENT}-v${VERSION_STUB}.xpi&rdquo; file below while viewing this page in Firefox. This release will update automatically."
+        RELEASE_BODY="To install the plugin, click on the ${CLIENT}-v${VERSION_STUB}.xpi file below while viewing this page in Firefox. This release will update automatically."
     fi
     UPLOAD_URL=$(curl --fail --silent \
         --user "${DOORKEY}" \
