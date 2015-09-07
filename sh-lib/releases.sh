@@ -21,14 +21,14 @@ function create-github-release () {
             "https://api.github.com/repos/Juris-M/${FORK}/releases")
         #\
         #    | ~/bin/jq '.upload_url')
-        echo "URL IS: [${UPLOAD_URL}]"
-        exit 1
         if [ "" == "$UPLOAD_URL" ]; then
             echo "OUCH! Upload of release failed."
 	        exit 1
         fi
         UPLOAD_URL=$(echo $UPLOAD_URL | sed -e "s/\"\(.*\){.*/\1/")
     fi
+        echo "URL IS: [${UPLOAD_URL}]"
+        exit 1
 }
 
 function add-xpi-to-github-release () {
