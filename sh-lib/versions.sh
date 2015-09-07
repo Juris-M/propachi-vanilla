@@ -3,7 +3,7 @@ function compose-version-string () {
     VERSION_STUB="$VERSION"
     if [ ${BETA} -gt 0 ]; then
         VERSION="${VERSION}beta${BETA}"
-        IS_BETA=1
+        IS_BETA="true"
     fi
     if [ ${RELEASE} -eq 1 ]; then
         VERSION="${VERSION}alpha"
