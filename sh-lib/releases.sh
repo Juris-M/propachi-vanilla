@@ -18,13 +18,14 @@ function create-github-release () {
         UPLOAD_URL=$(curl --fail --silent \
             --user "${DOORKEY}" \
             --data "${DAT}" \
-            "https://api.github.com/repos/Juris-M/${FORK}/releases" \
-            | ~/bin/jq '.upload_url')
-    fi
-    UPLOAD_URL=$(echo $UPLOAD_URL | sed -e "s/\"\(.*\){.*/\1/")
-    if [ "" == "$UPLOAD_URL" ]; then
-        echo "OUCH! Upload of release failed."
-	exit 1
+            "https://api.github.com/repos/Juris-M/${FORK}/releases")
+        #\
+        #    | ~/bin/jq '.upload_url')
+        if [ "" == "$UPLOAD_URL" ]; then
+            echo "OUCH! Upload of release failed."
+	        exit 1
+        fi
+        UPLOAD_URL=$(echo $UPLOAD_URL | sed -e "s/\"\(.*\){.*/\1/")
     fi
 }
 
