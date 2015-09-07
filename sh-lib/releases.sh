@@ -12,7 +12,8 @@ function create-github-release () {
     UPLOAD_URL=$(curl --fail --silent \
         --user "${DOORKEY}" \
         "https://api.github.com/repos/Juris-M/${FORK}/releases/tags/${RELEASE_TAG}" \
-        ~/bin/jq ".upload_url")
+        | ~/bin/jq ".upload_url")
+    echo "after one"
     if [ "$UPLOAD_URL" == "" ]; then
         echo "two"
         # Create the release
