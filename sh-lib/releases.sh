@@ -19,7 +19,7 @@ function create-github-release () {
             --user "${DOORKEY}" \
             --data "${DAT}" \
             "https://api.github.com/repos/Juris-M/${FORK}/releases" \
-            | ~/bin/jq '.upload_url')
+            )
         echo "${UPLOAD_URL}"
         if [ "" == "$UPLOAD_URL" ]; then
             echo "OUCH! Upload of release failed."
