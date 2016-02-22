@@ -46,7 +46,7 @@ function publish-update () {
     # Generate a signed update manifest
     cp update-TEMPLATE.rdf update-TRANSFER.rdf
     sed -si "s/\(<em:version>\).*\(<\/em:version>\)/\\1${VERSION_STUB}\\2/" update-TRANSFER.rdf
-    sed -si "s/\(<em:updateLink>.*download\/\).*\(<\/em:updateLink>\)/\\1v${VERSION_STUB}\/${CLIENT}-v${VERSION_STUB}.xpi\\2/" update-TRANSFER.rdf
+    sed -si "s/\(<em:updateLink>.*download\/\).*\(<\/em:updateLink>\)/\\1v${VERSION_STUB}\/${CLIENT}-v${VERSION_STUB}-fx.xpi\\2/" update-TRANSFER.rdf
     echo -n "Proceed? (y/n): "
     read CHOICE
     if [ "${CHOICE}" == "y" ]; then
