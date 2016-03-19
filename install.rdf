@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
   <Description about="urn:mozilla:install-manifest">
     <em:id>propachi-vanilla@juris-m.github.io</em:id>
@@ -6,24 +6,34 @@
     <em:name>Propachi: monkey-patch for Zotero CSL processor (standard version)</em:name>
     <em:version>1.1.26</em:version>
     <em:creator>Frank Bennett</em:creator>
-    <em:contributor></em:contributor>
+    <em:contributor/>
     <em:description>Replaces Zotero CSL processor with an alternative version.</em:description>
     <em:updateURL>https://juris-m.github.io/propachi-vanilla/update.rdf</em:updateURL>
     <em:unpack>true</em:unpack>
     <em:bootstrap>true</em:bootstrap>
     <em:targetApplication>
-	  <Description>
-        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id> <!-- Firefox -->
-        <em:minVersion>3.6</em:minVersion>
-        <em:maxVersion>43.*</em:maxVersion>
-	  </Description>
+      <Description>
+        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+        <!-- Firefox -->
+        <em:minVersion>39.0</em:minVersion>
+        <em:maxVersion>44.*</em:maxVersion>
+      </Description>
     </em:targetApplication>
     <em:targetApplication>
-	  <Description>
-        <em:id>zotero@chnm.gmu.edu</em:id> <!-- Zotero -->
-        <em:minVersion>2.1</em:minVersion>
+      <Description>
+        <em:id>zotero@chnm.gmu.edu</em:id>
+        <!-- Zotero -->
+        <em:minVersion>4.0</em:minVersion>
         <em:maxVersion>4.0.*</em:maxVersion>
-	  </Description>
+      </Description>
+    </em:targetApplication>
+    <em:targetApplication>
+      <Description>
+        <em:id>jurism@juris-m.github.io</em:id>
+        <em:minVersion>4.0</em:minVersion>
+        <em:maxVersion>4.0.*</em:maxVersion>
+      </Description>
     </em:targetApplication>
   </Description>
 </RDF>
+
