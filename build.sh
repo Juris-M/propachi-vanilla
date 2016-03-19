@@ -12,89 +12,41 @@ BRANCH="master"
 CLIENT="propachi-vanilla"
 VERSION_ROOT="1.1."
 
-# Error handlers
-. sh-lib/errors.sh
+function xx-fetch-latest-processor () {
+    cd "${SCRIPT_DIR}"
+    cd ../citeproc-js
+    ./test.py -B
+    mv citeproc.js "${SCRIPT_DIR}/chrome/content/citeproc.js"
+    cd "${SCRIPT_DIR}"
+}
 
-# Setup
-. sh-lib/setup.sh
+function xx-read-version-from-processor-code () {
+    PROCESSOR_VERSION=$(cat "chrome/content/citeproc.js" | grep "PROCESSOR_VERSION:" | sed -e "s/.*PROCESSOR_VERSION:[^0-9]*\([.0-9]\+\).*/\1/")
+}
 
-# Version levels
-. sh-lib/versions.sh
+function xx-make-the-bundle () {
+    find . -name '.hg' -prune -o \
+        -name '.hgignore' -prune -o \
+        -name '.gitmodules' -prune -o \
+        -name '*~' -prune -o \
+        -name '.git' -prune -o \
+        -name 'attic' -prune -o \
+        -name '.hgsub' -prune -o \
+        -name '.hgsubstate' -prune -o \
+        -name '*.bak' -prune -o \
+        -name 'version' -prune -o \
+        -name 'releases' -prune -o \
+        -name 'sh-lib' -prune -o \
+        -name 'build.sh' -prune -o \
+        -print \
+        | xargs zip "${XPI_FILE}" >> "${LOG_FILE}"
+}
 
-# Prompt for options
-#. sh-lib/prompt.sh
-
-# Parse command-line options
-. sh-lib/opts.sh
-
-# Functions for build
-. sh-lib/builder.sh
-
-# Functions for release
-. sh-lib/releases.sh
-
-# Functions for repo management
-. sh-lib/repo.sh
-
-# Perform release ops
-case $RELEASE in
-    1)
-        echo "(1)"
-        # Preliminaries
-        increment-patch-level
-        if [ "$BETA" -gt 0 ]; then
-            increment-beta-level
-        fi
-        echo "Version: ${VERSION}"
-
-        # Build
-        echo "(a)"
-        touch-log
-        echo "(b)"
-        refresh-style-modules
-        echo "(c)"
-        build-the-plugin
-        echo "(d)"
-        repo-finish 1 "Built as ALPHA (no upload to GitHub)"
-        echo "(e)"
-        ;;
-    2)
-        echo "(2)"
-        # Claxon
-        check-for-uncommitted
-        # Preliminaries
-        increment-patch-level
-        increment-beta-level
-        save-beta-level
-        echo "Version is: $VERSION"
-        # Build
-        touch-log
-        refresh-style-modules
-        build-the-plugin
-        git-checkin-all-and-push
-        create-github-release
-        add-xpi-to-github-release
-        repo-finish 0 "Released as BETA (uploaded to GitHub, prerelease)"
-        ;;
-    3)
-        echo "(3)"
-        # Claxon
-        check-for-uncommitted
-        block-uncommitted
-        # Preliminaries
-        reset-beta-level
-        increment-patch-level
-        check-for-release-dir
-        save-patch-level
-        echo "Version is: $VERSION"
-        # Build
-        touch-log
-        refresh-style-modules
-        build-the-plugin
-        git-checkin-all-and-push
-        create-github-release
-        add-xpi-to-github-release
-        publish-update
-        repo-finish 0 "Released as FINAL (uploaded to GitHub, full wax)"
-        ;;
-esac
+function build-the-plugin () {
+        set-install-version
+        xx-fetch-latest-processor
+        xx-read-version-from-processor-code
+        xx-make-the-bundle
+    }
+    
+. jm-sh/frontend.sh
