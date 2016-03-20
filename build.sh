@@ -11,7 +11,7 @@ FORK="propachi-vanilla"
 BRANCH="master"
 CLIENT="propachi-vanilla"
 VERSION_ROOT="1.1."
-SIGNED_STUB="propachi_patch_zotero_csl_processor_vanilla_v-"
+SIGNED_STUB="propachi_replace_zotero_csl_processor_std_ver-"
 
 function xx-fetch-latest-processor () {
     cd "${SCRIPT_DIR}"
