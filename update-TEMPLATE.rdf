@@ -5,13 +5,13 @@
       <rdf:Seq>
         <rdf:li>
           <rdf:Description>
-            <em:version>1.1.46</em:version>
+            <em:version>1.1.47</em:version>
             <em:targetApplication>
               <rdf:Description>
                 <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
                 <em:minVersion>38.0</em:minVersion>
                 <em:maxVersion>45.*</em:maxVersion>
-                <em:updateLink>https://github.com/Juris-M/propachi-vanilla/releases/download/v1.1.46/propachi-vanilla-v1.1.46-fx.xpi</em:updateLink>
+                <em:updateLink>https://github.com/Juris-M/propachi-vanilla/releases/download/v1.1.47/propachi-vanilla-v1.1.47-fx.xpi</em:updateLink>
               </rdf:Description>
             </em:targetApplication>
           </rdf:Description>
