@@ -51,9 +51,9 @@ var installProcessor = function() {
     
     let UPPERCASE = getPref("uppercase");
     if(UPPERCASE) {
-      Services.scriptloader.loadSubScript("chrome://propachi-vanilla/content/citeprocUppercase.js", this, "UTF-8");
+      Services.scriptloader.loadSubScript("chrome://propachi/content/citeprocUppercase.js", this, "UTF-8");
     } else {
-      Services.scriptloader.loadSubScript("chrome://propachi-vanilla/content/citeprocVanilla.js", this, "UTF-8");
+      Services.scriptloader.loadSubScript("chrome://propachi/content/citeprocVanilla.js", this, "UTF-8");
     }
 	
     Zotero.CiteProc.CSL = CSL;
