@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<vbox xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <setting pref="extensions.propachi.uppercase" title="Uppercase subtitles" type="bool">
+    Enable if your style requires that the first character of a subtitle in "sentence case" be capitalized.
+  </setting>
+</vbox>
