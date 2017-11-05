@@ -5,7 +5,7 @@
     <em:type>2</em:type>
     <em:name>Propachi: monkey-patch for Zotero CSL processor (standard version)</em:name>
     <em:version>1.1.107</em:version>
-    <em:creator>Frank Bennett and Brenton Wiernik</em:creator>
+    <em:creator>Frank Bennett and Brenton M. Wiernik</em:creator>
     <em:description>Replaces Zotero CSL processor with an alternative version.</em:description>
     <em:updateURL>https://juris-m.github.io/propachi-vanilla/update.rdf</em:updateURL>
     <em:unpack>true</em:unpack>
