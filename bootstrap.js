@@ -75,6 +75,37 @@ var uiObserver = {
     }
 }
 
+var prefObserver = {
+  register: function() {
+    var prefService = Components.classes["@mozilla.org/preferences-service;1"]
+                                .getService(Components.interfaces.nsIPrefService);
+
+    this.branch = prefService.getBranch(PREF_BRANCH);
+
+    // Now we queue the interface called nsIPrefBranch2. This interface is described as:  
+    // "nsIPrefBranch2 allows clients to observe changes to pref values."
+    // This is only necessary prior to Gecko 13
+    if (!("addObserver" in this.branch))
+        this.branch.QueryInterface(Components.interfaces.nsIPrefBranch2);
+
+    // Finally add the observer.
+    this.branch.addObserver("", this, false);
+  },
+
+  unregister: function() {
+    this.branch.removeObserver("", this);
+  },
+
+  observe: function(aSubject, aTopic, aData) {
+    switch (aData) {
+      case "uppercase":
+        installProcessor();
+        break;
+    }
+  }
+}
+prefObserver.register();
+
 /*
  * Bootstrap functions
  */
