@@ -98,9 +98,12 @@ var prefObserver = {
 
   observe: function(aSubject, aTopic, aData) {
     switch (aData) {
-      case "uppercase":
-        installProcessor();
+    case "uppercase":
+        if (installFlag) {
+            installProcessor();
+        }
         break;
+        ;;
     }
   }
 }
