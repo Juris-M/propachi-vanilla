@@ -16,7 +16,7 @@ SIGNED_STUB="propachi_replace_zotero_csl_processor_std_ver-"
 function xx-fetch-latest-processor () {
     cd "${SCRIPT_DIR}"
     cd ../citeproc-js
-    ./test.py -B
+    cslrun -a
     cp citeproc.js "${SCRIPT_DIR}/chrome/content/citeprocVanilla.js"
     cp citeproc.js "${SCRIPT_DIR}/chrome/content/citeprocUppercase.js"
     sed -si 's/this\.development_extensions\.main_title_from_short_title = false/this\.development_extensions\.main_title_from_short_title = true/' "${SCRIPT_DIR}/chrome/content/citeprocUppercase.js"
